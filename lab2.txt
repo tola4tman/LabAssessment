@@ -1,0 +1,42 @@
+using System;
+
+namespace LABASSESSMENT
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //TO CALCULATE THE CGPA AND CPGA PERCENTAGE OF A STUDENT.
+            double totalgrade = 0;
+            double cgpa = 0;
+            double cgpapercentage;
+            Console.WriteLine("please type in your name :");
+            string name = Console.ReadLine().ToUpper();
+            Console.WriteLine("Welcome" + name + "your cgpa is on its way");
+            int [] grade = new int[5]; // array of 5 size
+            Console.WriteLine("can you please input your 1st score :");
+            int firstscore = int.Parse(Console.ReadLine());
+            Console.WriteLine("can you please input your 2nd score :");
+            int secondscore = int.Parse(Console.ReadLine());
+            Console.WriteLine("can you please input your 3rd score :");
+            int thirdscore = int.Parse(Console.ReadLine());
+            Console.WriteLine("can you please input your 4th score :");
+            int fourthscore = int.Parse(Console.ReadLine());
+            Console.WriteLine("can you please input your 5th score :");
+            int fifthscore = int.Parse(Console.ReadLine());
+            grade[0] = firstscore /10;
+            grade[1] = secondscore /10;
+            grade [2] = thirdscore / 10;
+            grade [3] = fourthscore / 10;
+            grade [4] = fifthscore /10 ;
+            foreach (var score  in grade)
+            {
+                totalgrade += grade;
+                cgpa = totalgrade /(grade.Length);     
+            }
+            cgpapercentage = (cgpa * 9.5);
+            Console.WriteLine("Hi " + name + " your cgpa is " + cgpa);
+            Console.WriteLine(name + "your cgpa percentage is " + cgpapercentage.ToString("0.00") + " % ");
+        }
+    }
+}
